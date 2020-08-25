@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+<body>
+
+<h2>Weather App</h2>
+
+<table>
+  <tr>
+    <th>Zip Code</th>
+    <th>City_Name</th>
+    <th>Temperature</th>
+    <th>Humidity</th>
+    <th>Unit</th>
+    <th>Update Value</th>
+    <th>Change Update value</th>
+  </tr>
+  {% for key in dataframe %}
+  <tr>
+    <td>{{ key }}</td>
+    
+    <td>{{ dataframe[key]["city_name"] }}</td>
+    <td id="{{key}}">{{ dataframe[key]["temp"] }}</td>
+    <td>{{ dataframe[key]["humidity"] }}</td>
+    
+    <td>
+    <select    onchange="change_function({{key}})" id="{{key}}dropdown" >        
+                <option value="C"  selected>C</option>
+                <option value="F">F</option>
+                
+        </select></td>
+    <td id="{{key}}_updatevalue">{{ dataframe[key]["updated"] }}</td>
+    <td>
+    <select  onchange="onchange_function1({{key}})" id="{{key}}_update" > 
+                <option value="1" selected> Choose</option>
+                <option value="0" id="0" >0</option>
+                <option value="1" id="1" >1</option>
+                
+        </select></td>
+  </tr>
+  {% endfor %}
+  
+</table>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
+
+
+</body>
+</html>

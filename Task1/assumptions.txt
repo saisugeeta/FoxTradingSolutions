@@ -1,0 +1,4 @@
+Assumptions
+------------------------------------------------
+1.Assumed that unit of temperature is initially set to C(Celsius)
+2.Assumed that update value is initially set to 1.

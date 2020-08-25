@@ -1,0 +1,8 @@
+Requiremnts:
+--------------------------------------------------
+All the libraries should be installed
+Flask,requests,aps_scheduler,config_parser,flask_scheduler
+1.pip install Flask
+2.pip install configparser
+3.pip install Flask-APScheduler
+4.pip install requests
